@@ -1,0 +1,62 @@
+FUND MASTER EXPLORATION REPORT
+========================================
+
+Total Funds: 40
+
+FUND HOUSES (10):
+fund_house
+SBI Mutual Fund             5
+HDFC Mutual Fund            5
+ICICI Prudential MF         5
+Nippon India MF             5
+Kotak Mahindra MF           4
+Axis Mutual Fund            4
+Aditya Birla Sun Life MF    3
+UTI Mutual Fund             3
+Mirae Asset MF              3
+DSP Mutual Fund             3
+Name: count, dtype: int64
+
+CATEGORIES (2):
+category
+Equity    34
+Debt       6
+Name: count, dtype: int64
+
+SUB-CATEGORIES (12):
+sub_category
+Large Cap          14
+Mid Cap             7
+Small Cap           6
+Liquid              3
+Gilt                2
+Flexi Cap           2
+Short Duration      1
+Value               1
+Index/ETF           1
+Index               1
+Large & Mid Cap     1
+ELSS                1
+Name: count, dtype: int64
+
+RISK CATEGORY DISTRIBUTION:
+risk_category
+Moderate           16
+High                8
+Very High           6
+Low                 6
+Moderately High     4
+Name: count, dtype: int64
+
+SEBI CATEGORY CODES:
+sebi_category_code
+EC01    14
+EC02     7
+EC03     6
+DC02     3
+DC01     3
+EC04     3
+EI01     2
+EC06     1
+EC05     1
+Name: count, dtype: int64

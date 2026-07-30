@@ -1,0 +1,8 @@
+DATA QUALITY SUMMARY — DAY 1
+========================================
+
+Fund master codes: 40
+NAV history codes: 40
+Coverage: 40 / 40 (100.0%)
+Missing in NAV: 0
+Extra in NAV: 0
