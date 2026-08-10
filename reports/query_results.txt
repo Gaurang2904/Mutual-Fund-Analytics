@@ -1,0 +1,190 @@
+
+==========================================================================================
+QUERY 1  |  Top 5 funds by AUM
+==========================================================================================
+                                          scheme_name        fund_house category    plan  aum_crore  aum_lakh_crore  return_3yr_pct  expense_ratio_pct
+Mirae Asset Emerging Bluechip Fund - Regular - Growth    Mirae Asset MF   Equity Regular    49046.0            0.49           14.56               1.52
+        Kotak Emerging Equity Fund - Regular - Growth Kotak Mahindra MF   Equity Regular    47469.0            0.47           18.23               1.56
+       Nippon India Small Cap Fund - Regular - Growth   Nippon India MF   Equity Regular    43630.0            0.44           20.15               1.53
+           DSP Top 100 Equity Fund - Regular - Growth   DSP Mutual Fund   Equity Regular    41828.0            0.42           12.82               1.54
+                  UTI Mid Cap Fund - Regular - Growth   UTI Mutual Fund   Equity Regular    41728.0            0.42           15.61               1.51
+
+==========================================================================================
+QUERY 2  |  Average NAV per month, per scheme (2025)
+==========================================================================================
+                        scheme_name month_key  avg_nav  min_nav  max_nav  trading_days
+ABSL Liquid Fund - Regular - Growth   2025-01 375.5145 375.0846 376.2258            23
+ABSL Liquid Fund - Regular - Growth   2025-02 377.2106 376.3076 377.9327            20
+ABSL Liquid Fund - Regular - Growth   2025-03 378.8083 378.2379 379.1226            21
+ABSL Liquid Fund - Regular - Growth   2025-04 379.8595 379.1758 380.5722            22
+ABSL Liquid Fund - Regular - Growth   2025-05 381.6843 380.8110 382.4272            22
+ABSL Liquid Fund - Regular - Growth   2025-06 383.7757 382.5089 384.6413            21
+ABSL Liquid Fund - Regular - Growth   2025-07 385.5776 384.6227 387.0338            23
+ABSL Liquid Fund - Regular - Growth   2025-08 387.6025 386.9706 388.4068            21
+ABSL Liquid Fund - Regular - Growth   2025-09 389.6924 388.4381 391.1301            22
+ABSL Liquid Fund - Regular - Growth   2025-10 392.0124 391.0236 393.3788            23
+ABSL Liquid Fund - Regular - Growth   2025-11 394.7781 393.5955 396.1134            20
+ABSL Liquid Fund - Regular - Growth   2025-12 397.5277 396.0398 398.9130            23
+  ... 108 more rows (total 120)
+
+==========================================================================================
+QUERY 3  |  SIP inflow year-on-year growth
+==========================================================================================
+  month  sip_inflow_crore  inflow_prior_year  abs_growth_crore  yoy_growth_pct
+2023-01           13856.0            11517.0            2339.0           20.31
+2023-02           13687.0            11438.0            2249.0           19.66
+2023-03           14276.0            12328.0            1948.0           15.80
+2023-04           14749.0            11863.0            2886.0           24.33
+2023-05           14749.0            12286.0            2463.0           20.05
+2023-06           14734.0            12276.0            2458.0           20.02
+2023-07           15245.0            12140.0            3105.0           25.58
+2023-08           15814.0            12694.0            3120.0           24.58
+2023-09           16042.0            12976.0            3066.0           23.63
+2023-10           16928.0            13040.0            3888.0           29.82
+2023-11           17073.0            13306.0            3767.0           28.31
+2023-12           17610.0            13573.0            4037.0           29.74
+  ... 24 more rows (total 36)
+
+==========================================================================================
+QUERY 4  |  Transactions by state
+==========================================================================================
+         state  txn_count  investors  total_crore  avg_txn_inr  sip_txns  b30_value_share_pct
+        Punjab       2965        441        31.58     106503.0      1792                 50.5
+    Tamil Nadu       2806        425        31.52     112323.0      1642                 54.0
+Madhya Pradesh       2931        441        30.83     105190.0      1796                 53.7
+     Rajasthan       2577        413        29.86     115889.0      1499                 48.5
+       Gujarat       2780        433        29.84     107323.0      1653                  0.0
+   West Bengal       2748        422        29.72     108145.0      1638                  0.0
+     Telangana       2718        410        29.02     106777.0      1656                  0.0
+         Delhi       2677        421        28.96     108193.0      1606                  0.0
+ Uttar Pradesh       2695        422        28.54     105888.0      1625                 67.4
+       Haryana       2736        400        27.96     102206.0      1690                 53.0
+     Karnataka       2621        387        27.38     104446.0      1620                 51.6
+   Maharashtra       2524        385        26.95     106780.0      1499                 29.9
+
+==========================================================================================
+QUERY 5  |  Funds with expense ratio below 1%
+==========================================================================================
+                                         scheme_name               fund_house    plan   sub_category  expense_ratio_pct  return_3yr_pct  sharpe_ratio  aum_crore
+Nippon India Gilt Securities Fund - Regular - Growth          Nippon India MF Regular           Gilt               0.55            5.31          1.33    30030.0
+        HDFC Short Term Debt Fund - Regular - Growth         HDFC Mutual Fund Regular Short Duration               0.56            7.37          1.84    27953.0
+                Kotak Liquid Fund - Regular - Growth        Kotak Mahindra MF Regular         Liquid               0.60            6.18          6.18    27623.0
+            SBI Bluechip Fund - Direct Plan - Growth          SBI Mutual Fund  Direct      Large Cap               0.66           11.30          0.81     1231.0
+       Nippon India Large Cap Fund - Direct - Growth          Nippon India MF  Direct      Large Cap               0.72           12.33          0.88    39475.0
+           SBI Small Cap Fund - Direct Plan - Growth          SBI Mutual Fund  Direct      Small Cap               0.72           23.14          0.93    36061.0
+            ICICI Pru Liquid Fund - Regular - Growth      ICICI Prudential MF Regular         Liquid               0.74            7.68          7.68    39116.0
+                Axis Bluechip Fund - Direct - Growth         Axis Mutual Fund  Direct      Large Cap               0.75           12.14          0.87    15866.0
+        SBI Magnum Gilt Fund - Regular Plan - Growth          SBI Mutual Fund Regular           Gilt               0.77            6.07          1.52    24101.0
+   HDFC Mid-Cap Opportunities Fund - Direct - Growth         HDFC Mutual Fund  Direct        Mid Cap               0.78           15.29          0.80    18792.0
+                 ABSL Liquid Fund - Regular - Growth Aditya Birla Sun Life MF Regular         Liquid               0.79            5.14          5.14    38995.0
+           ICICI Pru Bluechip Fund - Direct - Growth      ICICI Prudential MF  Direct      Large Cap               0.80           14.41          1.03    41553.0
+  ... 2 more rows (total 14)
+
+==========================================================================================
+QUERY 6  |  Risk-adjusted leaders: return per unit of risk, net of cost
+==========================================================================================
+                                         scheme_name               fund_house   sub_category  sharpe_ratio  sortino_ratio  return_3yr_pct  benchmark_3yr_pct  excess_return_3yr_pct  max_drawdown_pct  expense_ratio_pct  return_net_of_fee_pct anomaly_flags
+        HDFC Short Term Debt Fund - Regular - Growth         HDFC Mutual Fund Short Duration          1.84           2.79            7.37               5.39                   1.98             -6.01               0.56                   6.81          NONE
+        SBI Magnum Gilt Fund - Regular Plan - Growth          SBI Mutual Fund           Gilt          1.52           2.11            6.07               4.47                   1.60             -2.30               0.77                   5.30          NONE
+Nippon India Gilt Securities Fund - Regular - Growth          Nippon India MF           Gilt          1.33           2.38            5.31               4.42                   0.89             -2.23               0.55                   4.76          NONE
+           HDFC Top 100 Fund - Regular Plan - Growth         HDFC Mutual Fund      Large Cap          1.06           1.70           14.84              14.06                   0.78            -17.41               1.55                  13.29          NONE
+       Mirae Asset Large Cap Fund - Regular - Growth           Mirae Asset MF      Large Cap          1.06           1.66           14.81              13.19                   1.62            -17.07               1.46                  13.35          NONE
+           ICICI Pru Bluechip Fund - Direct - Growth      ICICI Prudential MF      Large Cap          1.03           1.27           14.41              13.53                   0.88            -26.59               0.80                  13.61          NONE
+      Nippon India Large Cap Fund - Regular - Growth          Nippon India MF      Large Cap          1.00           1.68           14.00              13.14                   0.86            -16.07               1.51                  12.49          NONE
+       ABSL Frontline Equity Fund - Regular - Growth Aditya Birla Sun Life MF      Large Cap          0.98           1.25           13.78              12.44                   1.34            -15.07               1.60                  12.18          NONE
+   ICICI Pru Value Discovery Fund - Regular - Growth      ICICI Prudential MF          Value          0.98           1.50           14.76              14.21                   0.55            -21.89               1.41                  13.35          NONE
+              Kotak Flexicap Fund - Regular - Growth        Kotak Mahindra MF      Flexi Cap          0.98           1.57           15.65              13.80                   1.85            -19.50               1.45                  14.20          NONE
+
+==========================================================================================
+QUERY 7  |  Monthly net investor flow (SIP + Lumpsum - Redemption)
+==========================================================================================
+month_key  sip_crore  lumpsum_crore  redemption_crore  net_flow_crore  redemption_ratio_pct
+  2024-01       1.26          12.55              7.95            5.86                  57.6
+  2024-02       1.26          11.14              6.99            5.41                  56.3
+  2024-03       1.21          12.48              7.66            6.03                  55.9
+  2024-04       1.35          12.75              6.74            7.36                  47.8
+  2024-05       1.32          11.47              7.72            5.07                  60.4
+  2024-06       1.31          12.50              8.41            5.40                  60.9
+  2024-07       1.35          11.71              6.71            6.36                  51.3
+  2024-08       1.25          13.40              8.12            6.53                  55.4
+  2024-09       1.23          11.38              6.25            6.36                  49.6
+  2024-10       1.25          12.72              7.39            6.58                  52.9
+  2024-11       1.23          11.47              7.00            5.70                  55.1
+  2024-12       1.29          13.13              7.08            7.34                  49.1
+  ... 5 more rows (total 17)
+
+==========================================================================================
+QUERY 8  |  Fund house AUM growth, first to latest reporting date
+==========================================================================================
+              fund_house first_date  aum_start_lakh_cr  last_date  aum_end_lakh_cr  growth_lakh_cr  total_growth_pct  cagr_pct  num_schemes
+         SBI Mutual Fund 2022-03-31               6.05 2025-12-31            12.50            6.45             106.6     21.33          186
+     ICICI Prudential MF 2022-03-31               4.65 2025-12-31            10.74            6.09             131.0     24.98          216
+        HDFC Mutual Fund 2022-03-31               4.35 2025-12-31             9.30            4.95             113.8     22.44          195
+         Nippon India MF 2022-03-31               2.70 2025-12-31             7.00            4.30             159.3     28.89          177
+       Kotak Mahindra MF 2022-03-31               2.70 2025-12-31             5.80            3.10             114.8     22.59          168
+Aditya Birla Sun Life MF 2022-03-31               2.78 2025-12-31             4.60            1.82              65.5     14.36          199
+         UTI Mutual Fund 2022-03-31               2.30 2025-12-31             4.10            1.80              78.3     16.65          142
+        Axis Mutual Fund 2022-03-31               2.50 2025-12-31             3.50            1.00              40.0      9.38           95
+          Mirae Asset MF 2022-03-31               1.05 2025-12-31             2.90            1.85             176.2     31.08           56
+         DSP Mutual Fund 2022-03-31               1.10 2025-12-31             2.30            1.20             109.1     21.71           88
+
+==========================================================================================
+QUERY 9  |  Maximum drawdown per scheme, computed from daily NAV
+==========================================================================================
+                                      scheme_name               fund_house sub_category  computed_max_dd_pct  vendor_max_dd_pct  difference_pp trough_date
+        SBI Small Cap Fund - Direct Plan - Growth          SBI Mutual Fund    Small Cap               -52.57             -24.78         -27.79  2025-10-28
+           Axis Small Cap Fund - Regular - Growth         Axis Mutual Fund    Small Cap               -51.68             -14.45         -37.23  2026-05-11
+           ABSL Small Cap Fund - Regular - Growth Aditya Birla Sun Life MF    Small Cap               -35.45             -23.61         -11.84  2026-05-11
+            DSP Small Cap Fund - Regular - Growth          DSP Mutual Fund    Small Cap               -31.17             -17.01         -14.16  2025-01-03
+       SBI Small Cap Fund - Regular Plan - Growth          SBI Mutual Fund    Small Cap               -28.71             -13.35         -15.36  2025-05-14
+              UTI Mid Cap Fund - Regular - Growth          UTI Mutual Fund      Mid Cap               -28.00             -13.43         -14.57  2026-04-27
+        HDFC Top 100 Fund - Regular Plan - Growth         HDFC Mutual Fund    Large Cap               -24.73             -17.41          -7.32  2022-09-15
+    Kotak Emerging Equity Fund - Regular - Growth        Kotak Mahindra MF      Mid Cap               -24.00             -21.92          -2.08  2024-10-17
+   Nippon India Small Cap Fund - Regular - Growth          Nippon India MF    Small Cap               -23.34             -30.87           7.53  2026-02-20
+             Axis Bluechip Fund - Direct - Growth         Axis Mutual Fund    Large Cap               -21.75             -17.40          -4.35  2023-05-22
+            UTI Flexi Cap Fund - Regular - Growth          UTI Mutual Fund    Flexi Cap               -21.54             -12.14          -9.40  2022-07-04
+HDFC Mid-Cap Opportunities Fund - Direct - Growth         HDFC Mutual Fund      Mid Cap               -21.12             -32.22          11.10  2025-09-12
+  ... 3 more rows (total 15)
+
+==========================================================================================
+QUERY 10  |  Direct vs Regular plan - what the commission costs the investor
+==========================================================================================
+         fund_house  regular_schemes  regular_expense_pct  direct_expense_pct  expense_gap_pp  regular_return_3yr  direct_return_3yr  direct_advantage_pp
+   Axis Mutual Fund                3                1.467               0.750           0.717               16.00              12.14                -3.86
+    SBI Mutual Fund                3                1.247               0.690           0.557               13.94              17.22                 3.28
+ICICI Prudential MF                4                1.232               0.800           0.432               13.01              14.41                 1.40
+    Nippon India MF                3                1.197               0.805           0.392               13.15              12.05                -1.10
+   HDFC Mutual Fund                3                1.163               0.850           0.313               12.93              14.34                 1.41
+
+==========================================================================================
+QUERY 11  |  Sector allocation across all equity funds
+==========================================================================================
+        sector  funds_holding  positions  avg_weight_pct  total_market_value_cr  share_of_total_pct
+       Banking             30         60           10.87               62840.29               19.34
+            IT             27         40           11.39               38477.11               11.84
+        Pharma             22         38           10.72               34606.10               10.65
+    Automobile             26         33            9.81               34296.97               10.56
+     Utilities             19         24           11.06               25108.63                7.73
+Infrastructure             18         22            8.73               22433.39                6.91
+          FMCG             19         21           10.91               21151.15                6.51
+       Telecom             15         15            9.71               16051.45                4.94
+        Energy             13         13            9.07               15286.54                4.71
+   Diversified             14         14           12.09               13897.79                4.28
+        Cement             12         12            8.75               11611.97                3.57
+        Paints             10         10            8.99               10612.07                3.27
+  ... 2 more rows (total 14)
+
+==========================================================================================
+QUERY 12  |  SIP behaviour by investor age group and city tier
+==========================================================================================
+age_group city_tier  sip_txns  investors  avg_sip_inr  total_crore  avg_income_lakh  kyc_verified_pct
+    18-25       B30      1145        255      11232.0         1.29              5.4              92.1
+    18-25       T30      1804        451      10776.0         1.94              5.5              92.4
+    26-35       B30      2740        656      10980.0         3.01             15.8              92.5
+    26-35       T30      5323       1281      10990.0         5.85             15.6              92.1
+    36-45       B30      1497        373      10933.0         1.64             36.4              92.2
+    36-45       T30      3429        812      10865.0         3.73             36.0              91.5
+    46-55       B30       702        180       9791.0         0.69             56.2              91.2
+    46-55       T30      1598        384      11728.0         1.87             59.5              90.2
+      56+       B30       509        126      12020.0         0.61             46.1              92.1
+      56+       T30       969        244      11341.0         1.10             43.3              93.1

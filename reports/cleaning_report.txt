@@ -1,0 +1,136 @@
+BLUESTOCK MUTUAL FUND ANALYTICS - DAY 2 CLEANING REPORT
+generated: 2026-08-10 00:02:38
+pandas 3.0.5 / numpy 2.5.1
+
+==============================================================================
+01_fund_master.csv
+==============================================================================
+  launch_date unparseable      : 0
+  duplicate amfi_code removed  : 0
+  expense_ratio outside 0.1-2.5%   : 0
+  rows 40 -> 40
+  -> data/processed/01_fund_master_clean.csv  (40 rows x 16 cols)
+
+==============================================================================
+02_nav_history.csv
+==============================================================================
+  unparseable dates dropped    : 0
+  duplicate (amfi_code,date)   : 0
+  NAV <= 0 nulled for fill     : 0
+  NAV already null             : 0
+  business-day calendar        : 1150 days (2022-01-03 -> 2026-05-29)
+  NAV values forward-filled    : 0
+  leading rows w/o NAV dropped : 0
+  |daily return| > 25% flagged   : 0
+  rows 46000 -> 46000  | schemes: 40
+  -> data/processed/02_nav_history_clean.csv  (46,000 rows x 5 cols)
+
+==============================================================================
+03_aum_by_fund_house.csv
+==============================================================================
+  duplicate (date,fund_house)  : 0
+  non-positive AUM removed     : 0
+  unit mismatch lakh-cr vs cr  : 0
+  rows 90 -> 90  | houses: 10, dates: 9
+  -> data/processed/03_aum_by_fund_house_clean.csv  (90 rows x 6 cols)
+
+==============================================================================
+04_monthly_sip_inflows.csv
+==============================================================================
+  unparseable months           : 0
+  non-positive inflow removed  : 0
+  YoY nulls (first 12 months)  : 12
+  max drift vs supplied YoY    : 0.00 pp
+  peak inflow                  : 2025-12 = Rs 31,002 Cr
+  rows 48 -> 48
+  -> data/processed/04_monthly_sip_inflows_clean.csv  (48 rows x 7 cols)
+
+==============================================================================
+05_category_inflows.csv
+==============================================================================
+  duplicate (month,category)   : 0
+  net-outflow months (kept)    : 0
+  coverage: 12 months x 12 categories
+  rows 144 -> 144
+  -> data/processed/05_category_inflows_clean.csv  (144 rows x 5 cols)
+
+==============================================================================
+06_industry_folio_count.csv
+==============================================================================
+  duplicate months             : 0
+  max segment-vs-total drift   : 0.010 Cr
+  span: 2022-01 (13.26 Cr) -> 2025-12 (26.12 Cr)
+  rows 21 -> 21
+  -> data/processed/06_industry_folio_count_clean.csv  (21 rows x 8 cols)
+
+==============================================================================
+07_scheme_performance.csv
+==============================================================================
+  non-numeric values coerced   : 0
+  duplicate amfi_code          : 0
+  codes absent from master     : 0
+  expense_ratio outside 0.1-2.5%   : 0
+    flag expense_ratio_out_of_band   : 0
+    flag drawdown_not_negative       : 0
+    flag beta_implausible            : 0
+    flag return_1yr_extreme          : 0
+    flag sharpe_extreme              : 3
+    flag negative_aum                : 0
+  rows flagged anomalous       : 3
+  rows 40 -> 40
+  -> data/processed/07_scheme_performance_clean.csv  (40 rows x 22 cols)
+
+==============================================================================
+08_investor_transactions.csv
+==============================================================================
+  unparseable dates dropped    : 0
+  raw transaction_type values  : ['Lumpsum', 'Redemption', 'SIP']
+  values rewritten by mapping  : 0
+  unmapped transaction types   : none
+  amount <= 0 removed          : 0
+  KYC values                   : ['Pending', 'Verified']
+  invalid KYC values           : none
+  exact duplicate rows removed : 0
+  txns w/ unknown amfi_code    : 0
+  date range                   : 2024-01-01 -> 2025-05-30
+  mix                          : {'SIP': 19716, 'Lumpsum': 8095, 'Redemption': 4967}
+  rows 32778 -> 32778  | investors: 5,000
+  -> data/processed/08_investor_transactions_clean.csv  (32,778 rows x 15 cols)
+
+==============================================================================
+09_portfolio_holdings.csv
+==============================================================================
+  duplicate (fund,stock,date)  : 0
+  weight outside (0,100] rmvd  : 0
+  holdings w/ unknown amfi_code: 0
+  weight sum per fund          : min 99.98%  max 100.02%
+  funds with holdings          : 34 of 40
+  rows 322 -> 322
+  -> data/processed/09_portfolio_holdings_clean.csv  (322 rows x 8 cols)
+
+==============================================================================
+10_benchmark_indices.csv
+==============================================================================
+  duplicate (date,index)       : 0
+  close <= 0 nulled            : 0
+  indices                      : ['BSE_SMALLCAP', 'CRISIL_GILT', 'CRISIL_LIQUID', 'NIFTY100', 'NIFTY50', 'NIFTY500', 'NIFTY_MIDCAP150']
+  rows 8050 -> 8050
+  -> data/processed/10_benchmark_indices_clean.csv  (8,050 rows x 4 cols)
+
+==============================================================================
+SUMMARY - raw vs cleaned row counts
+==============================================================================
+  dataset                            raw     clean     delta
+  01_fund_master                      40        40        +0
+  02_nav_history                  46,000    46,000        +0
+  03_aum_by_fund_house                90        90        +0
+  04_monthly_sip_inflows              48        48        +0
+  05_category_inflows                144       144        +0
+  06_industry_folio_count             21        21        +0
+  07_scheme_performance               40        40        +0
+  08_investor_transactions        32,778    32,778        +0
+  09_portfolio_holdings              322       322        +0
+  10_benchmark_indices             8,050     8,050        +0
+
+NOTE: 02_nav_history gains rows only if the business-day reindex found gaps;
+      it is unchanged here because the raw grid is already dense.
